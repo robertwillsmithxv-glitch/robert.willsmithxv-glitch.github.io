@@ -1,47 +1,52 @@
-# Da SMP on GitHub
+# Da-SMP
 
-This folder is prepared for a GitHub Pages website and a separate GitHub
-Release download. The original `server website` folder is not modified.
+**A Minecraft survival server where players can explore, build, and play together.**
 
-## Publish the website with GitHub Pages
+Welcome to Da-SMP! Whether you're looking to build something impressive, explore the world, gather resources, or simply play with friends, Da-SMP offers a place to enjoy Minecraft together.
 
-1. Create a **public** GitHub repository. GitHub Pages on the free plan requires
-   a public repository.
-2. Upload the **contents of the `site` folder** to the root of that repository.
-   Keep `index.html`, `styles.css`, and `script.js` at the repository root, and
-   preserve the `images` folder alongside them. Do not upload the `site` folder
-   itself as a nested directory.
-3. In the repository, open **Settings → Pages**. Under **Build and deployment**,
-   choose **Deploy from a branch**, select the `main` branch and `/ (root)`,
-   then save.
-4. Wait for the Pages deployment to finish. The site URL will look like
-   `https://YOUR-GITHUB-USERNAME.github.io/YOUR-REPOSITORY/`.
+## 🌍 About the Server
 
-The HTML refers to images using relative paths, so GitHub Pages serves them
-from the repository automatically.
+Da-SMP is a community-oriented Minecraft survival server with cross-platform support. Players using different editions and clients can join the same server and share their adventures.
 
-## Attach the ZIP to a GitHub Release
+Our aim is to provide an enjoyable, accessible survival experience while keeping the familiar feel of Minecraft.
 
-Do **not** add the ZIP to the repository or GitHub Pages site. It is in
-`release-assets` for attaching to a release, and is larger than GitHub's 25 MiB
-browser file-upload limit for repository files.
+## 🎮 Supported Platforms
 
-1. On the repository page, open **Releases → Draft a new release**.
-2. Create the tag `v1.0` (or use another tag and keep the link in the next step
-   consistent).
-3. Drag `release-assets/eaglercraft-26.2-fe8f1237-d6714264.zip` into the release
-   assets area and publish the release.
-4. Copy the asset's download link. It will look like:
-   `https://github.com/YOUR-GITHUB-USERNAME/YOUR-REPOSITORY/releases/download/v1.0/eaglercraft-26.2-fe8f1237-d6714264.zip`.
-5. In the repository's `script.js`, replace the placeholder value of
-   `GITHUB_RELEASE_ASSET_URL` with the copied asset link, then commit that
-   `script.js` change. GitHub Pages will redeploy.
+Da-SMP supports multiple ways to play:
 
-The ZIP is about 55 MiB. GitHub release assets allow individual files under
-2 GiB, so it fits. GitHub documents release limits at
-https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases.
+- **Minecraft Java Edition** – Play using the standard Minecraft Java client.
+- **Minecraft Bedrock Edition** – Join from supported Bedrock devices.
+- **Eaglercraft** – Play directly through a compatible web browser client.
 
-For general upload and Pages instructions, see
-https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
-and
-https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits.
+## ✨ Features
+
+- Multiplayer survival gameplay.
+- Cross-platform compatibility.
+- Player homes and teleportation features.
+- Random teleportation and world exploration.
+- Community builds and player interactions.
+- Support for a range of Minecraft versions and clients.
+
+## 📦 Downloads & Resources
+
+This repository contains resources associated with Da-SMP, including downloadable files and other materials for players.
+
+Browse the available folders to find the resources you're looking for.
+
+Please make sure you use compatible versions of any downloadable resources.
+
+## 🤝 Community
+
+Da-SMP is built around the people who play on it. Explore, collaborate, meet other players, and make your mark on the world.
+
+Whether you're a long-time Minecraft player or just getting started, you're welcome here!
+
+## ⚠️ Disclaimer
+
+Da-SMP is an independent Minecraft server and is not affiliated with, endorsed by, or officially connected to Mojang Studios or Microsoft.
+
+Minecraft is a trademark of Mojang Studios.
+
+---
+
+**Da-SMP — or is it?**
