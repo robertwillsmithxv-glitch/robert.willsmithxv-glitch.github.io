@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -311,4 +312,319 @@
 
     <script src="script.js"></script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Da SMP - Eaglercraft Server</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#Home" aria-label="Da SMP home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Da SMP</span>
+        </a>
+
+        <nav class="tab-nav" aria-label="Primary navigation">
+            <button class="tablinks active" onclick="openTab(event, 'Home')" data-i18n="navHome">Overview</button>
+            <button class="tablinks" onclick="openTab(event, 'Instructions')" data-i18n="navJoin">How to Join</button>
+            <button class="tablinks" onclick="openTab(event, 'Plugins')" data-i18n="navPlugins">Plugins</button>
+            <button class="tablinks" onclick="openTab(event, 'Alternatives')" data-i18n="navAlternatives">Alternative Links</button>
+            <button class="tablinks" onclick="openTab(event, 'Rules')" data-i18n="navRules">Rules</button>
+        </nav>
+
+        <div class="lang-toggle" aria-label="Language">
+            <button onclick="setLanguage('en')" class="lang-btn">EN</button>
+            <button onclick="setLanguage('fr')" class="lang-btn">FR</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="Home" class="tabcontent" style="display: block;">
+            <div class="hero">
+                <div class="hero-copy">
+                    <div class="eyebrow" data-i18n="gameName">MINECRAFT 1.21.11</div>
+                    <h1>Da SMP</h1>
+                    <p data-i18n="subtitle">Random survival multiplayer for a world worth exploring.</p>
+                    <div class="status-pill">
+                        <span class="status-dot" id="statusDot"></span>
+                        <span id="statusText" data-i18n="checkingStatus">Checking server status...</span>
+                    </div>
+                </div>
+                <div class="server-panel">
+                    <div class="link-row">
+                        <span class="panel-label" data-i18n="eaglercraftLink">Eaglercraft link</span>
+                        <div class="ip-box">
+                            <input type="text" id="serverIP" value="wss://server.brumby-tone.ts.net/play" readonly aria-label="Eaglercraft server address">
+                            <button onclick="copyToClipboard('serverIP', 'copyBtn')" id="copyBtn" data-i18n="copyBtn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="link-row">
+                        <span class="panel-label" data-i18n="javaLink">Java link</span>
+                        <div class="ip-box">
+                            <input type="text" id="javaLink" value="wap-chit.tun.ply.gg" readonly aria-label="Java server address">
+                            <button onclick="copyToClipboard('javaLink', 'javaCopyBtn')" id="javaCopyBtn" data-i18n="copyBtn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="link-row">
+                        <span class="panel-label" data-i18n="bedrockLink">Bedrock link</span>
+                        <div class="ip-box">
+                            <input type="text" id="bedrockLink" value="wap-brotherhood.tun.ply.gg" readonly aria-label="Bedrock server address">
+                            <button onclick="copyToClipboard('bedrockLink', 'bedrockCopyBtn')" id="bedrockCopyBtn" data-i18n="copyBtn">Copy</button>
+                        </div>
+                    </div>
+                    <div class="link-row">
+                        <span class="panel-label" data-i18n="bedrockPort">Bedrock port</span>
+                        <div class="ip-box">
+                            <input type="text" id="bedrockPort" value="19132" readonly aria-label="Bedrock server port">
+                            <button onclick="copyToClipboard('bedrockPort', 'bedrockPortCopyBtn')" id="bedrockPortCopyBtn" data-i18n="copyBtn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="compatibility-note">
+                <strong data-i18n="compatibilityTitle">Client compatibility</strong>
+                <p data-i18n="compatibilityDesc">Clients older than 1.16 can connect, but blocks below Y=0 will not render because negative coordinates are a newer world feature.</p>
+            </div>
+
+            <aside class="card quick-card">
+                <span class="section-kicker" data-i18n="quickKicker">Quick start</span>
+                <h2 data-i18n="quickTitle">Ready to play?</h2>
+                <p data-i18n="quickDesc">Connect to Da SMP on Minecraft 1.21.11, register your account, and jump into the world.</p>
+                <button class="primary-button" onclick="openTabByName('Instructions')" data-i18n="joinSteps">View join steps</button>
+            </aside>
+        </section>
+
+        <section id="Plugins" class="tabcontent">
+            <div class="page-heading">
+                <span class="section-kicker" data-i18n="pluginsKicker">Server features</span>
+                <h2 data-i18n="pluginsTitle">Plugins &amp; commands</h2>
+            </div>
+            <section class="card commands-card">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-kicker" data-i18n="commandsKicker">Essentials</span>
+                        <h2 data-i18n="commandsTitle">Commands</h2>
+                    </div>
+                </div>
+                <ul class="commands-list">
+                    <li><code>/rtp</code><span data-i18n="commandRtp">Teleport randomly in the world you are currently in.</span></li>
+                    <li><code>/warp spawn</code><span data-i18n="commandWarp">Teleport to the server spawn.</span></li>
+                    <li><code>/tpa &lt;player&gt;</code><span data-i18n="commandTpa">Request to teleport to another player.</span></li>
+                    <li><code>/tpahere &lt;player&gt;</code><span data-i18n="commandTpahere">Ask another player to come to you.</span></li>
+                    <li><code>/tpaccept</code><span data-i18n="commandTpaccept">Accept a teleport request.</span></li>
+                    <li><code>/tpdeny</code><span data-i18n="commandTpdeny">Decline a teleport request.</span></li>
+                    <li><code>/sethome &lt;name&gt;</code><span data-i18n="commandSethome">Set a named home. You can set up to three homes.</span></li>
+                    <li><code>/home &lt;name&gt;</code><span data-i18n="commandHome">Teleport to one of your saved homes.</span></li>
+                    <li><code>/chestsort</code><span data-i18n="commandChestSort">Configure chest sorting.</span></li>
+                </ul>
+            </section>
+            <article class="card plugin-card">
+                <span class="section-kicker" data-i18n="pluginsKicker">Server features</span>
+                <h3 data-i18n="veinMinerTitle">Vein miner</h3>
+                <p data-i18n="veinMinerDesc">Crouch while mining an ore or chopping a tree and it breaks instantly.</p>
+            </article>
+        </section>
+
+        <section id="Instructions" class="tabcontent">
+            <div class="page-heading">
+                <span class="section-kicker" data-i18n="joinKicker">Get connected</span>
+                <h2 data-i18n="joinTitle">How to join Da SMP</h2>
+            </div>
+            <nav class="join-tabs" aria-label="Choose a Minecraft client">
+                <button class="join-tab active" onclick="openJoinTab(event, 'EaglercraftGuide')" data-i18n="joinEaglercraft">Eaglercraft</button>
+                <button class="join-tab" onclick="openJoinTab(event, 'JavaGuide')" data-i18n="joinJava">Java</button>
+                <button class="join-tab" onclick="openJoinTab(event, 'BedrockGuide')" data-i18n="joinBedrock">Bedrock</button>
+            </nav>
+
+            <div id="EaglercraftGuide" class="join-panel" style="display: block;">
+                <div class="card guide-card">
+                    <span class="step-badge">1</span>
+                    <div class="guide-content">
+                        <h3 data-i18n="clientTitle">Client</h3>
+                        <p data-i18n="clientLaunch">You can launch Eaglercraft 26.2 online:</p>
+                        <a class="launch-link" href="https://eaglercrafthub.com/26-2" target="_blank" rel="noopener noreferrer" data-i18n="launchEaglercraft">Launch Eaglercraft 26.2</a>
+                        <p data-i18n="clientDownload">Or download the client to your computer:</p>
+                        <a class="download-button" data-github-release-download download>
+                            <span data-i18n="downloadLabel">Download</span>
+                            <span class="download-format">ZIP</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card guide-card">
+                    <span class="step-badge">2</span>
+                    <div class="guide-content">
+                        <h3 data-i18n="step1Title">Add the server</h3>
+                        <ol class="instruction-list">
+                            <li data-i18n="step1Desc1">Open Eaglercraft and go to <strong>Multiplayer</strong>, then click <strong>Add Server</strong>.</li>
+                            <img src="images/server_list.png" alt="Multiplayer menu" class="responsive-img">
+                            <li data-i18n="step1Desc2">Name the server "Da SMP".</li>
+                            <li data-i18n="step1Desc3">Paste <strong>wss://server.brumby-tone.ts.net/play</strong> into the server address box.</li>
+                            <img src="images/add_server.png" alt="Adding the server address" class="responsive-img">
+                        </ol>
+                        <div class="compatibility-note compact">
+                            <strong data-i18n="compatibilityTitle">Client compatibility</strong>
+                            <p data-i18n="compatibilityDesc">Clients older than 1.16 can connect, but blocks below Y=0 will not render because negative coordinates are a newer world feature.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card guide-card">
+                    <span class="step-badge">3</span>
+                    <div class="guide-content">
+                        <h3 data-i18n="step2Title">Register and log in</h3>
+                        <p data-i18n="step2Desc">Use a password command to protect your account and saved inventory.</p>
+                        <div class="auth-grid">
+                            <div class="auth-box">
+                                <h4 data-i18n="authFirstTime">First time joining?</h4>
+                                <code>/register "password" "confirmPassword"</code>
+                                <img src="images/register.png" alt="Register command example" class="responsive-img small-img">
+                                <p><em data-i18n="authNote">You will be logged in automatically after registering.</em></p>
+                            </div>
+                            <div class="auth-box">
+                                <h4 data-i18n="authReturn">Returning player?</h4>
+                                <code>/login "password"</code>
+                                <img src="images/login.png" alt="Login command example" class="responsive-img small-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="JavaGuide" class="join-panel">
+                <div class="card guide-card coming-soon-card">
+                    <div class="guide-content">
+                        <h3 data-i18n="javaGuideTitle">Join with Java Edition</h3>
+                        <ol class="instruction-list">
+                            <li data-i18n="javaStep1">Open Minecraft Java Edition and select <strong>Multiplayer</strong>.</li>
+                            <li data-i18n="javaStep2">Choose <strong>Add Server</strong>. Enter <strong>Da SMP</strong> as the server name and <code>wap-chit.tun.ply.gg</code> as the server address, then save.</li>
+                            <li data-i18n="javaStep3">Select Da SMP and click <strong>Join Server</strong>.</li>
+                        </ol>
+                        <div class="auth-grid">
+                            <div class="auth-box">
+                                <h4 data-i18n="authFirstTime">First time joining?</h4>
+                                <code>/register "password" "confirmPassword"</code>
+                                <img src="images/register.png" alt="Register command example" class="responsive-img small-img">
+                                <p><em data-i18n="authNote">You will be logged in automatically after registering.</em></p>
+                            </div>
+                            <div class="auth-box">
+                                <h4 data-i18n="authReturn">Returning player?</h4>
+                                <code>/login "password"</code>
+                                <img src="images/login.png" alt="Login command example" class="responsive-img small-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="BedrockGuide" class="join-panel">
+                <div class="card guide-card coming-soon-card">
+                    <div class="guide-content">
+                        <h3 data-i18n="bedrockGuideTitle">Join with Bedrock Edition</h3>
+                        <ol class="instruction-list">
+                            <li data-i18n="bedrockStep1">Open Minecraft Bedrock Edition, choose <strong>Play</strong>, then open the <strong>Servers</strong> tab.</li>
+                            <li data-i18n="bedrockStep2">Choose <strong>Add Server</strong>. Enter <strong>Da SMP</strong> as the server name, <code>wap-brotherhood.tun.ply.gg</code> as the server address, and <code>19132</code> as the port.</li>
+                            <li data-i18n="bedrockStep3">Save the server, select it, and join.</li>
+                        </ol>
+                        <div class="auth-grid">
+                            <div class="auth-box">
+                                <h4 data-i18n="authFirstTime">First time joining?</h4>
+                                <code>/register "password" "confirmPassword"</code>
+                                <img src="images/register.png" alt="Register command example" class="responsive-img small-img">
+                                <p><em data-i18n="authNote">You will be logged in automatically after registering.</em></p>
+                            </div>
+                            <div class="auth-box">
+                                <h4 data-i18n="authReturn">Returning player?</h4>
+                                <code>/login "password"</code>
+                                <img src="images/login.png" alt="Login command example" class="responsive-img small-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Alternatives" class="tabcontent">
+            <div class="page-heading">
+                <span class="section-kicker" data-i18n="alternativeKicker">Backup addresses</span>
+                <h2 data-i18n="alternativeTitle">Alternative links</h2>
+                <p data-i18n="alternativeIntro">These links are fallbacks for Eaglercraft. The main server link is preferred and should always be tried first.</p>
+            </div>
+            <div class="alternative-grid">
+                <article class="card alternative-card">
+                    <span class="section-kicker">Working backup</span>
+                    <h3>Loophole</h3>
+                    <div class="ip-box">
+                        <input type="text" id="altLink0" value="wss://dasmp.loophole.site/play" readonly aria-label="Loophole alternative Eaglercraft link">
+                        <button onclick="copyToClipboard('altLink0', 'altCopy0')" id="altCopy0" data-i18n="copyBtn">Copy</button>
+                    </div>
+                    <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem;">Works, but really slow.</p>
+                </article>
+                <article class="card alternative-card">
+                    <span class="section-kicker" data-i18n="firstHalf">First half of the month</span>
+                    <h3 data-i18n="alternativePrimary">Primary backup</h3>
+                    <div class="ip-box">
+                        <input type="text" id="altLink1" value="wss://survival-radiator-unleaded.ngrok-free.dev/play" readonly aria-label="First alternative Eaglercraft link">
+                        <button onclick="copyToClipboard('altLink1', 'altCopy1')" id="altCopy1" data-i18n="copyBtn">Copy</button>
+                    </div>
+                </article>
+                <article class="card alternative-card">
+                    <span class="section-kicker" data-i18n="secondHalf">Second half of the month</span>
+                    <h3 data-i18n="alternativeSecondary">Secondary backup</h3>
+                    <div class="ip-box">
+                        <input type="text" id="altLink2" value="wss://rename-proving-easily.ngrok-free.dev/play" readonly aria-label="Second alternative Eaglercraft link">
+                        <button onclick="copyToClipboard('altLink2', 'altCopy2')" id="altCopy2" data-i18n="copyBtn">Copy</button>
+                    </div>
+                </article>
+            </div>
+            <div class="card fallback-card">
+                <span class="section-kicker" data-i18n="fallbackKicker">Last resort</span>
+                <h3 data-i18n="fallbackTitle">Occasional emergency link</h3>
+                <p data-i18n="fallbackDesc">There is only a small chance this backup is running, so only try it if neither of the links above works.</p>
+                <div class="ip-box">
+                    <input type="text" id="altLink3" value="wss://polygraph-antibody-dutiful.ngrok-free.dev/play" readonly aria-label="Emergency alternative Eaglercraft link">
+                    <button onclick="copyToClipboard('altLink3', 'altCopy3')" id="altCopy3" data-i18n="copyBtn">Copy</button>
+                </div>
+                <p class="fallback-warning" data-i18n="alternativeWarning">Alternative addresses are not guaranteed to be online and may become unavailable.</p>
+            </div>
+        </section>
+
+        <section id="Rules" class="tabcontent">
+            <div class="page-heading">
+                <span class="section-kicker" data-i18n="rulesKicker">Community</span>
+                <h2 data-i18n="rulesTitle">Server rules</h2>
+                <p data-i18n="rulesDesc">Keep Da SMP fun and playable for everyone.</p>
+            </div>
+            <div class="rules-grid">
+                <article class="card rule-card">
+                    <span class="rule-number">01</span>
+                    <h3 data-i18n="rule1Title">No massive explosions</h3>
+                    <p data-i18n="rule1Desc">Please do not explode 10,000 TNT or otherwise overwhelm the Raspberry Pi.</p>
+                </article>
+                <article class="card rule-card">
+                    <span class="rule-number">02</span>
+                    <h3 data-i18n="rule2Title">Respect builds</h3>
+                    <p data-i18n="rule2Desc">Griefing and stealing are allowed, but respect other players and the builds they invested in.</p>
+                </article>
+                <article class="card rule-card">
+                    <span class="rule-number">03</span>
+                    <h3 data-i18n="rule3Title">No cheating</h3>
+                    <p data-i18n="rule3Desc">Modified clients such as X-Ray, KillAura, or fly hacks will result in a ban.</p>
+                </article>
+                <article class="card rule-card">
+                    <span class="rule-number">04</span>
+                    <h3 data-i18n="rule4Title">Be respectful</h3>
+                    <p data-i18n="rule4Desc">Keep the chat friendly and avoid toxic behavior.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+>>>>>>> e5a19d38ebadba454c4d95a128717cb896194bff
 </html>
